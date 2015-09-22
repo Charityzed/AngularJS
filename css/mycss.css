@@ -1,0 +1,5 @@
+     .ng-dirty{ background: red; }  
+.ng-invalid{ background: red; }  
+    .ng-dirty.ng-valid{ background: lightgreen; }
+
+

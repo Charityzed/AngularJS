@@ -1,5 +1,6 @@
 
 var myApp2=angular.module('list1',[]);
+
 myApp2.controller('ListController',function($scope) {
 	$scope.reports=[
 	{ 	name:'Cyton Weekly Report #20',
@@ -45,4 +46,3 @@ myApp2.controller('ListController',function($scope) {
 	
 
 
-// })(window.angular)

@@ -1,6 +1,26 @@
-(function (angular){
+( function ( angular ) {
 	'use strict';
-	var myApp=angular.module('menu', []);
+	var myApp=angular.module('menu', ['ngRoute']);
+    myApp.config(['$routeProvider', function($routeProvider){
+        $routeProvider.when('/home',{
+            templateUrl:'home.html',
+            controller: 'HomeController'
+        })
+        .when('/gallery',{
+            templateUrl:'gallery.html',
+            controller: 'galleryController'
+        })
+        .when('/bid',{
+            templateUrl:'bid.html',
+            controller: 'bidController'
+        });
+        myApp.controller('bidController', function($scope){
+          $scope.message="Hello You will bid"; 
+            $scope.user=null;
+            
+        });
+        
+    }]);
 
 	myApp.controller('MenuContaroller',['$scope', function($scope){
 
@@ -10,7 +30,7 @@
 	
 
 	
-	$scope.English=function(){
+	$scope.English=function() {
 	$scope.Main="DOWNLOADS";
 	$scope.About="TOPICALS";
 	$scope.Gallery="RESEARCH"
@@ -28,6 +48,7 @@
 	$scope.Gallery="RECHERCHE"
 	};
 	}]);
+    
 	myApp.controller('ListController',function($scope) {
 	$scope.reports=[
 	{ 	name:'Cyton Weekly Report #20',
@@ -68,10 +89,6 @@
 	}
 	];
 	
-});
-
-
-
-	
-
-})(window.angular)
+} );
+    
+} ) ( window.angular )
